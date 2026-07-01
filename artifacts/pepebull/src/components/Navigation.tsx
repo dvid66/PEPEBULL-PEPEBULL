@@ -29,8 +29,8 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-3 pointer-events-none">
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl border-[2.5px] border-[#E84040] hard-shadow-red px-4 py-2 flex items-center justify-between pointer-events-auto active-scale transition-transform duration-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-3 pointer-events-none">
+      <div className="max-w-7xl mx-auto bg-white rounded-2xl border-[2.5px] border-[#E84040] hard-shadow-red px-4 py-2 flex items-center justify-between pointer-events-auto active-scale transition-transform duration-200">
         {/* Left: mascot circle + $PEPEBULL wordmark */}
         <button onClick={() => scrollTo('home')} className="flex items-center gap-3 cursor-pointer group">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#4ADE80] hard-shadow-green transition-transform duration-300 group-hover:scale-110">

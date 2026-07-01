@@ -18,9 +18,9 @@ export function LiveChart() {
 
   return (
     <section id="chart" className="w-full section-indigo py-24 px-4 relative z-10">
-      <div className="max-w-6xl mx-auto">
-        <ScrollReveal className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
-          <div className="text-center md:text-left">
+      <div className="max-w-7xl mx-auto">
+        <ScrollReveal className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-12">
+          <div className="text-center lg:text-left">
             <div className="inline-block bg-[#D946EF] text-white rounded-full px-4 py-1 font-syne text-sm font-bold tracking-widest mb-4 border-2 border-[#1A1A1A] hard-shadow-black">
               04 / LIVE CHART
             </div>
@@ -51,7 +51,7 @@ export function LiveChart() {
         <ScrollReveal delay={0.2} className="w-full">
           <div 
             className="w-full rounded-2xl overflow-hidden border-2 border-[#D946EF] bg-[#1E1432] relative"
-            style={{ paddingBottom: '65%', boxShadow: '6px 6px 0 #D946EF' }}
+            style={{ paddingBottom: '50%', boxShadow: '6px 6px 0 #D946EF' }}
           >
             <style>
               {`

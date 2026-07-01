@@ -54,7 +54,7 @@ export function LiveStats() {
     if (!track) return;
     let frame: number;
     const scroll = () => {
-      if (!pausedRef.current) {
+      if (!pausedRef.current && window.innerWidth < 768) {
         track.scrollLeft += 0.8;
         if (track.scrollLeft >= track.scrollWidth / 2) {
           track.scrollLeft = 0;
@@ -108,7 +108,7 @@ export function LiveStats() {
 
       <div
         ref={trackRef}
-        className="flex gap-4 overflow-x-auto px-4 pb-6 cursor-grab active:cursor-grabbing"
+        className="flex md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-x-auto md:overflow-visible px-4 pb-6 cursor-grab md:cursor-auto active:cursor-grabbing md:active:cursor-auto max-w-7xl mx-auto"
         style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { pausedRef.current = false; }}
@@ -118,10 +118,11 @@ export function LiveStats() {
         {allCards.map((card, i) => {
           const val = getValue(card.id);
           const numVal = typeof val.display === 'number' ? val.display : 0;
+          const isDuplicate = i >= CARDS.length;
           return (
             <div
               key={i}
-              className="flex-shrink-0 w-52 md:w-64 bg-white rounded-2xl border-2 p-5 relative overflow-hidden"
+              className={`flex-shrink-0 w-52 md:w-auto bg-white rounded-2xl border-2 p-5 lg:p-6 relative overflow-hidden h-full min-h-[180px] ${isDuplicate ? 'md:hidden' : ''}`}
               style={{ borderColor: card.color, boxShadow: `5px 5px 0 ${card.shadow}` }}
             >
               {isLoading && (

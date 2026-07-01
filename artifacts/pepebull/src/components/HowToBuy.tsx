@@ -30,7 +30,7 @@ const STEPS = [
 export function HowToBuy() {
   return (
     <section id="buy" className="w-full section-brown py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         <ScrollReveal className="mb-16">
           <div
@@ -40,14 +40,14 @@ export function HowToBuy() {
             HOW TO BUY
           </div>
           <h2
-            className="font-bebas text-6xl md:text-8xl text-[#F5E8D3] tracking-wide leading-none"
+            className="font-bebas text-6xl md:text-8xl lg:text-9xl text-[#F5E8D3] tracking-wide leading-none"
             style={{ textShadow: '4px 4px 0 #FBBF24' }}
           >
             FOUR STEPS.<br />THAT'S IT.
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {STEPS.map((step, idx) => (
             <ScrollReveal key={step.num} delay={idx * 0.12}>
               <div

@@ -6,13 +6,13 @@ import sideImg2 from '@assets/gallery-09-matrix_1782941761632.jpg';
 export function Lore() {
   return (
     <section id="lore" className="w-full section-brown py-24 px-4 relative z-10">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         
         <ScrollReveal className="text-center mb-16">
           <div className="inline-block bg-[#F5E8D3] border-2 border-[#1C0A00] rounded-full px-4 py-1 font-syne text-[#1C0A00] text-sm font-bold tracking-widest uppercase mb-6 hard-shadow-amber">
             THE LORE
           </div>
-          <h3 className="font-bebas text-6xl md:text-8xl text-[#F5E8D3] text-stroke-orchid tracking-wide">
+          <h3 className="font-bebas text-6xl md:text-8xl lg:text-9xl text-[#F5E8D3] text-stroke-orchid tracking-wide">
             The Bull's Ascent
           </h3>
         </ScrollReveal>

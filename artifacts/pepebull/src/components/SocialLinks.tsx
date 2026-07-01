@@ -120,7 +120,7 @@ const SOCIAL_LINKS = [
 export function SocialLinks() {
   return (
     <section className="w-full section-yellow py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         <ScrollReveal className="mb-4">
           <div
@@ -130,21 +130,21 @@ export function SocialLinks() {
             COMMUNITY
           </div>
           <h2
-            className="font-bebas text-6xl md:text-8xl text-[#1A1A1A] tracking-wide"
+            className="font-bebas text-6xl md:text-8xl lg:text-9xl text-[#1A1A1A] tracking-wide"
             style={{ textShadow: '4px 4px 0 #1C0A00' }}
           >
             JOIN THE HERD
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
           {SOCIAL_LINKS.map((link, idx) => (
             <ScrollReveal key={link.label} delay={idx * 0.08}>
               <a
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 w-full px-7 py-5 rounded-2xl border-2 border-[#1A1A1A] transition-transform duration-200 hover:-translate-y-1 active:translate-y-0"
+                className="flex items-center gap-4 w-full px-7 py-5 lg:px-10 lg:py-6 rounded-2xl border-2 border-[#1A1A1A] transition-transform duration-200 hover:-translate-y-1 active:translate-y-0"
                 style={{
                   backgroundColor: link.bg,
                   color: link.text,

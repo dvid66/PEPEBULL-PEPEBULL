@@ -107,7 +107,7 @@ export function MemeCreator() {
 
   return (
     <section className="w-full section-cream py-24 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         <ScrollReveal className="mb-12">
           <div
@@ -127,7 +127,7 @@ export function MemeCreator() {
         <div className="flex flex-col lg:flex-row gap-10 items-start">
 
           {/* Left: Preview */}
-          <div className="flex-shrink-0 w-full lg:w-[380px]">
+          <div className="flex-shrink-0 w-full lg:w-[500px]">
             <div
               ref={previewRef}
               className="relative w-full aspect-square rounded-2xl border-2 border-[#1A1A1A] overflow-hidden"
@@ -196,7 +196,7 @@ export function MemeCreator() {
                 value={topText}
                 onChange={(e) => setTopText(e.target.value)}
                 placeholder="THE BULL MARKET"
-                className="w-full px-5 py-4 rounded-xl border-2 border-[#1A1A1A] bg-white font-jakarta font-bold text-[#1A1A1A] text-lg placeholder:text-[#1A1A1A]/30 outline-none focus:ring-0"
+                className="w-full px-5 py-4 lg:py-5 rounded-xl border-2 border-[#1A1A1A] bg-white font-jakarta font-bold text-[#1A1A1A] text-lg placeholder:text-[#1A1A1A]/30 outline-none focus:ring-0"
                 style={{ boxShadow: '4px 4px 0 #1A1A1A' }}
               />
             </div>
@@ -211,7 +211,7 @@ export function MemeCreator() {
                 value={bottomText}
                 onChange={(e) => setBottomText(e.target.value)}
                 placeholder="IS BACK"
-                className="w-full px-5 py-4 rounded-xl border-2 border-[#1A1A1A] bg-white font-jakarta font-bold text-[#1A1A1A] text-lg placeholder:text-[#1A1A1A]/30 outline-none focus:ring-0"
+                className="w-full px-5 py-4 lg:py-5 rounded-xl border-2 border-[#1A1A1A] bg-white font-jakarta font-bold text-[#1A1A1A] text-lg placeholder:text-[#1A1A1A]/30 outline-none focus:ring-0"
                 style={{ boxShadow: '4px 4px 0 #1A1A1A' }}
               />
             </div>
@@ -221,7 +221,7 @@ export function MemeCreator() {
               <label className="block font-syne text-xs font-bold tracking-widest text-[#1A1A1A]/60 uppercase mb-3">
                 CHOOSE THE BULL
               </label>
-              <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
+              <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-5 gap-2">
                 {BULLS.map((b, idx) => (
                   <button
                     key={idx}
@@ -245,7 +245,7 @@ export function MemeCreator() {
             {/* Randomize */}
             <button
               onClick={handleRandomize}
-              className="w-full py-4 rounded-full bg-[#FBBF24] border-2 border-[#1A1A1A] font-jakarta font-bold text-[#1A1A1A] text-lg tracking-wide transition-transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3"
+              className="w-full py-4 lg:py-5 rounded-full bg-[#FBBF24] border-2 border-[#1A1A1A] font-jakarta font-bold text-[#1A1A1A] text-lg tracking-wide transition-transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3"
               style={{ boxShadow: '4px 4px 0 #1A1A1A' }}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

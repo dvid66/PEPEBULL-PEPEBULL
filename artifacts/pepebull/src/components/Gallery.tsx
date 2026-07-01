@@ -42,7 +42,7 @@ export function Gallery() {
     if (!track) return;
 
     const scroll = () => {
-      if (!pausedRef.current) {
+      if (!pausedRef.current && window.innerWidth < 768) {
         track.scrollLeft += 0.7;
         // Seamless loop: when we've scrolled past the first half, jump back
         if (track.scrollLeft >= track.scrollWidth / 2) {
@@ -60,7 +60,7 @@ export function Gallery() {
 
   return (
     <section id="gallery" className="w-full section-brown py-24">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 mb-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12">
         <ScrollReveal>
           <div
             className="inline-block bg-[#F5E8D3] border-2 border-[#1C0A00] rounded-full px-4 py-1 font-syne text-[#1C0A00] text-sm font-bold tracking-widest uppercase mb-4"
@@ -80,7 +80,7 @@ export function Gallery() {
       {/* Auto-scrolling strip */}
       <div
         ref={trackRef}
-        className="flex gap-5 overflow-x-auto pb-4 cursor-grab active:cursor-grabbing"
+        className="flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8 overflow-x-auto md:overflow-visible pb-4 cursor-grab md:cursor-auto active:cursor-grabbing md:active:cursor-auto max-w-7xl mx-auto px-4 md:px-8"
         style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
         onMouseEnter={pause}
         onMouseLeave={resume}
@@ -89,11 +89,12 @@ export function Gallery() {
       >
         {ALL_ITEMS.map((item, idx) => {
           const isRevealed = activeCaption === idx;
+          const isDuplicate = idx >= GALLERY_ITEMS.length;
           return (
             <div
               key={idx}
               onClick={() => setActiveCaption(isRevealed ? null : idx)}
-              className="relative flex-shrink-0 w-[260px] md:w-[300px] aspect-square cursor-pointer bg-[#F9F3E8] rounded-2xl border-2 overflow-hidden transition-transform duration-200 hover:-translate-y-1"
+              className={`relative flex-shrink-0 w-[260px] md:w-auto aspect-square cursor-pointer bg-[#F9F3E8] rounded-2xl border-2 overflow-hidden transition-transform duration-200 hover:-translate-y-1 ${isDuplicate ? 'md:hidden' : ''}`}
               style={{
                 borderColor: item.color,
                 boxShadow: `6px 6px 0 ${item.color}`,

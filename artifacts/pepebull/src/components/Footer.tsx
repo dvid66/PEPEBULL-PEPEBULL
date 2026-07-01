@@ -36,18 +36,18 @@ export function Footer() {
 
   return (
     <footer className="w-full section-yellow py-16 px-4">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
         
         {/* Top: mascot + wordmark */}
         <div className="flex items-center gap-4 mb-12">
-          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#1A1A1A] hard-shadow-black">
+          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 border-[#1A1A1A] hard-shadow-black">
             <img src={mascotImg} alt="$PEPEBULL" className="w-full h-full object-cover object-top" />
           </div>
-          <span className="font-clash text-4xl font-bold text-[#1A1A1A]">$PEPEBULL</span>
+          <span className="font-clash text-4xl lg:text-6xl font-bold text-[#1A1A1A]">$PEPEBULL</span>
         </div>
 
         {/* Nav grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 w-full max-w-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-12 w-full max-w-3xl">
           {NAV_LINKS.map(link => (
             <a
               key={link.label}
@@ -67,7 +67,7 @@ export function Footer() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center text-xl hover:scale-110 transition-transform"
+              className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center text-xl lg:text-2xl hover:scale-110 transition-transform"
             >
               {item.icon}
             </a>
@@ -75,8 +75,8 @@ export function Footer() {
         </div>
 
         {/* Contract Address */}
-        <div className="mb-16 w-full max-w-md">
-          <div className="bg-white rounded-xl border-2 border-[#1A1A1A] hard-shadow-black p-4 flex items-center justify-between gap-4">
+        <div className="mb-16 w-full max-w-md lg:max-w-2xl">
+          <div className="bg-white rounded-xl border-2 border-[#1A1A1A] hard-shadow-black p-4 lg:p-6 flex items-center justify-between gap-4">
             <span className="font-bricolage text-[#1A1A1A] font-bold truncate flex-1 text-sm md:text-base">
               {contractAddress}
             </span>

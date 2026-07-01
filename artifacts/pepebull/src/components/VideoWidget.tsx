@@ -30,21 +30,21 @@ export function VideoWidget() {
 
   return (
     <section className="w-full section-cream py-20 px-4 relative z-10">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <h2 className="font-bebas text-5xl md:text-6xl text-[#1A1A1A] text-stroke-cyan text-center mb-10 tracking-wide">
             PEPEBULL LIVE
           </h2>
         </ScrollReveal>
         
-        <ScrollReveal delay={0.2} className="relative mx-auto w-full max-w-4xl group">
+        <ScrollReveal delay={0.2} className="relative mx-auto w-full max-w-6xl group">
           <div className="rounded-2xl border-2 border-[#1A1A1A] hard-shadow-cyan overflow-hidden bg-black">
             {/* Window header bar */}
-            <div className="bg-[#F5E8D3] border-b-2 border-[#1A1A1A] px-4 py-2 flex items-center justify-between">
+            <div className="bg-[#F5E8D3] border-b-2 border-[#1A1A1A] px-4 py-2 lg:py-3 flex items-center justify-between">
               <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#E84040] border border-[#1A1A1A]" />
-                <div className="w-3 h-3 rounded-full bg-[#FBBF24] border border-[#1A1A1A]" />
-                <div className="w-3 h-3 rounded-full bg-[#9CA3AF] border border-[#1A1A1A]" />
+                <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-[#E84040] border border-[#1A1A1A]" />
+                <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-[#FBBF24] border border-[#1A1A1A]" />
+                <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-[#9CA3AF] border border-[#1A1A1A]" />
               </div>
               <span className="font-jakarta font-bold text-[#1A1A1A] text-sm">$PEPEBULL TV</span>
               <div className="w-16" /> {/* spacer */}
