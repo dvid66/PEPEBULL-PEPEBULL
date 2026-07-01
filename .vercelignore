@@ -1,0 +1,6 @@
+artifacts/api-server
+artifacts/mockup-sandbox
+artifacts/scripts
+.env
+.env.local
+node_modules
