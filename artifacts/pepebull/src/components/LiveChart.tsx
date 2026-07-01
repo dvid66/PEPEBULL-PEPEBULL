@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ScrollReveal } from './ui/animations';
-import { Copy, Check, ExternalLink } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 
 export function LiveChart() {
   const [copied, setCopied] = useState(false);
@@ -17,50 +17,46 @@ export function LiveChart() {
   };
 
   return (
-    <section id="chart" className="w-full bg-pepe-charcoal py-24 px-4 section-bleed relative z-10">
+    <section id="chart" className="w-full section-indigo py-24 px-4 relative z-10">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-          <div>
-            <h2 className="font-bricolage text-5xl md:text-6xl font-bold text-pepe-white text-glow-orchid">
+        <ScrollReveal className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+          <div className="text-center md:text-left">
+            <div className="inline-block bg-[#D946EF] text-white rounded-full px-4 py-1 font-syne text-sm font-bold tracking-widest mb-4 border-2 border-[#1A1A1A] hard-shadow-black">
+              04 / LIVE CHART
+            </div>
+            <h2 className="font-bebas text-6xl md:text-8xl text-white text-stroke-orchid tracking-wide">
               LIVE CHART
             </h2>
-            <p className="mt-2 font-inter text-sm text-pepe-white/40">tracked by Dexscreener</p>
           </div>
           
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <button 
               onClick={handleCopy}
-              className="flex items-center gap-2 px-6 py-3 rounded-full font-jakarta font-bold text-pepe-lime border border-pepe-lime box-glow-lime hover-intensify active-scale bg-pepe-lime/5 transition-all shadow-[rgba(163,230,53,0.4)]"
+              className="flex items-center justify-center gap-2 px-8 py-4 rounded-full font-jakarta font-bold bg-[#A3E635] text-[#1A1A1A] border-2 border-[#1A1A1A] hard-shadow-black hover-intensify active-scale transition-transform text-lg"
             >
-              {copied ? <Check size={18} /> : <Copy size={18} />}
+              {copied ? <Check size={20} /> : <Copy size={20} />}
               {copied ? 'Copied!' : 'Copy CA'}
             </button>
             <a 
               href="https://dexscreener.com/solana/52hneKeDvX3QMpysYXERquicq3QXxfVChqsEtYaLpump"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-full font-jakarta font-bold text-pepe-cyan border border-pepe-cyan box-glow-cyan hover-intensify active-scale bg-pepe-cyan/5 transition-all shadow-[rgba(34,211,238,0.4)]"
+              className="flex items-center justify-center gap-2 px-8 py-4 rounded-full font-jakarta font-bold bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#1A1A1A] transition-colors text-lg"
             >
-              Open Dexscreener
-              <ExternalLink size={18} />
+              OPEN IN DEXSCREENER &rarr;
             </a>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2} className="w-full">
-          {/* Responsive iframe wrapper */}
           <div 
-            className="w-full rounded-[20px] overflow-hidden border border-pepe-orchid box-glow-orchid shadow-[rgba(217,70,239,0.3)] bg-pepe-deep relative"
-            style={{ paddingBottom: '125%' }}
+            className="w-full rounded-2xl overflow-hidden border-2 border-[#D946EF] bg-[#1E1432] relative"
+            style={{ paddingBottom: '65%', boxShadow: '6px 6px 0 #D946EF' }}
           >
-            {/* Using max-height via CSS media queries to handle desktop ratio */}
             <style>
               {`
-                @media (min-width: 1400px) {
-                  #chart-wrapper { padding-bottom: 65% !important; }
-                }
-                @media (min-width: 768px) and (max-width: 1399px) {
-                  #chart-wrapper { padding-bottom: 80% !important; }
+                @media (max-width: 767px) {
+                  #chart-wrapper { padding-bottom: 125% !important; }
                 }
               `}
             </style>

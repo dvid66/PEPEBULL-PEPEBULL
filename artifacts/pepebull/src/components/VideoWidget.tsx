@@ -29,43 +29,54 @@ export function VideoWidget() {
   };
 
   return (
-    <section className="w-full bg-pepe-deep py-20 px-4 section-bleed relative z-10">
+    <section className="w-full section-cream py-20 px-4 relative z-10">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <h2 className="font-syne text-pepe-amber text-glow-amber text-sm font-bold tracking-widest uppercase mb-6 text-center">
-            $PEPEBULL LIVE
+          <h2 className="font-bebas text-5xl md:text-6xl text-[#1A1A1A] text-stroke-cyan text-center mb-10 tracking-wide">
+            PEPEBULL LIVE
           </h2>
         </ScrollReveal>
         
-        <ScrollReveal delay={0.2} className="relative mx-auto w-full max-w-4xl aspect-video rounded-2xl border border-pepe-amber box-glow-amber overflow-hidden shadow-[rgba(251,191,36,0.4)] bg-black group" >
-          <div 
-            className="absolute inset-0 cursor-pointer"
-            onClick={togglePlay}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <video
-              ref={videoRef}
-              src={videoSrc}
-              className="w-full h-full object-cover"
-              onTimeUpdate={handleTimeUpdate}
-              onEnded={() => setIsPlaying(false)}
-              playsInline
-            />
-            
-            <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 flex items-center justify-center ${!isPlaying || isHovered ? 'opacity-100' : 'opacity-0'}`}>
-              <button className="w-20 h-20 rounded-full bg-pepe-charcoal/80 backdrop-blur-sm border border-pepe-amber flex items-center justify-center text-pepe-amber active-scale transition-transform box-glow-amber shadow-[rgba(251,191,36,0.4)]">
-                {isPlaying ? <Pause size={32} className="fill-current" /> : <Play size={32} className="fill-current ml-2" />}
-              </button>
+        <ScrollReveal delay={0.2} className="relative mx-auto w-full max-w-4xl group">
+          <div className="rounded-2xl border-2 border-[#1A1A1A] hard-shadow-cyan overflow-hidden bg-black">
+            {/* Window header bar */}
+            <div className="bg-[#F5E8D3] border-b-2 border-[#1A1A1A] px-4 py-2 flex items-center justify-between">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-[#E84040] border border-[#1A1A1A]" />
+                <div className="w-3 h-3 rounded-full bg-[#FBBF24] border border-[#1A1A1A]" />
+                <div className="w-3 h-3 rounded-full bg-[#9CA3AF] border border-[#1A1A1A]" />
+              </div>
+              <span className="font-jakarta font-bold text-[#1A1A1A] text-sm">$PEPEBULL TV</span>
+              <div className="w-16" /> {/* spacer */}
             </div>
+            {/* Video content */}
+            <div 
+              className="bg-black relative aspect-video cursor-pointer"
+              onClick={togglePlay}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <video
+                ref={videoRef}
+                src={videoSrc}
+                className="w-full h-full object-cover"
+                onTimeUpdate={handleTimeUpdate}
+                onEnded={() => setIsPlaying(false)}
+                playsInline
+              />
+              
+              <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 flex items-center justify-center ${!isPlaying || isHovered ? 'opacity-100' : 'opacity-0'}`}>
+                <button className="w-20 h-20 rounded-full bg-white/90 border-2 border-[#1A1A1A] flex items-center justify-center text-[#1A1A1A] active-scale transition-transform hard-shadow-black">
+                  {isPlaying ? <Pause size={32} className="fill-current" /> : <Play size={32} className="fill-current ml-2" />}
+                </button>
+              </div>
 
-            {/* Custom scrubber */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-pepe-charcoal/50">
-              <div 
-                className="h-full bg-pepe-amber relative"
-                style={{ width: `${progress}%` }}
-              >
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3 h-3 bg-pepe-amber rounded-full shadow-[0_0_8px_rgba(251,191,36,0.8)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* Custom scrubber */}
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#1A1A1A]">
+                <div 
+                  className="h-full bg-[#E84040] relative"
+                  style={{ width: `${progress}%` }}
+                />
               </div>
             </div>
           </div>

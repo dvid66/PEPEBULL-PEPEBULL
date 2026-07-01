@@ -18,7 +18,7 @@ const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="w-full bg-pepe-charcoal text-pepe-white selection:bg-pepe-lime/30 selection:text-pepe-white">
+    <div className="w-full">
       <Navigation />
       <Hero />
       <VideoWidget />

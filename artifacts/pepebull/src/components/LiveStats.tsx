@@ -24,51 +24,50 @@ export function LiveStats() {
   ];
 
   const getColorClasses = (color: string) => {
-    const map: Record<string, { border: string, text: string, shadow: string, glow: string }> = {
-      cyan: { border: "border-pepe-cyan", text: "text-pepe-cyan", shadow: "box-glow-cyan", glow: "text-glow-cyan" },
-      lime: { border: "border-pepe-lime", text: "text-pepe-lime", shadow: "box-glow-lime", glow: "text-glow-lime" },
-      amber: { border: "border-pepe-amber", text: "text-pepe-amber", shadow: "box-glow-amber", glow: "text-glow-amber" },
-      coral: { border: "border-pepe-coral", text: "text-pepe-coral", shadow: "box-glow-coral", glow: "text-glow-coral" },
+    const map: Record<string, { border: string, shadow: string }> = {
+      cyan: { border: "border-[#22D3EE]", shadow: "hard-shadow-cyan" },
+      lime: { border: "border-[#A3E635]", shadow: "hard-shadow-lime" },
+      amber: { border: "border-[#FBBF24]", shadow: "hard-shadow-amber" },
+      coral: { border: "border-[#E84040]", shadow: "hard-shadow-red" },
     };
     return map[color];
   };
 
   return (
-    <section className="w-full bg-pepe-charcoal py-16 px-4 border-b border-pepe-lime/10" ref={ref}>
+    <section className="w-full section-brown py-16 px-4" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <ScrollReveal className="flex justify-between items-end mb-6">
-          <h2 className="font-syne text-pepe-cyan text-glow-cyan text-sm font-bold tracking-widest uppercase">
+          <h2 className="font-syne text-[#F5E8D3] text-sm font-bold tracking-widest uppercase">
             LIVE STATS
           </h2>
           <button 
             onClick={handleRefresh}
             disabled={isLoading || spin}
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-pepe-lime text-pepe-lime box-glow-lime font-jakarta text-sm active-scale transition-all hover-intensify shadow-[rgba(163,230,53,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-[#1A1A1A] bg-[#A3E635] text-[#1A1A1A] hard-shadow-black font-jakarta font-bold text-sm hover-intensify active-scale transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <RefreshCw size={14} className={spin || isLoading ? 'animate-spin' : ''} />
+            <RefreshCw size={16} className={spin || isLoading ? 'animate-spin' : ''} />
             Refresh
           </button>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, i) => {
             const styles = getColorClasses(card.color);
             return (
               <ScrollReveal key={card.label} delay={i * 0.1}>
-                <div className={`bg-pepe-deep rounded-xl p-6 border ${styles.border} ${styles.shadow} relative overflow-hidden`}>
-                  {/* Shimmer loading overlay */}
+                <div className={`bg-[#F5E8D3] rounded-xl p-6 border-2 ${styles.border} ${styles.shadow} relative overflow-hidden transition-transform hover:-translate-y-1`}>
                   {isLoading && (
-                    <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-pepe-white/5 to-transparent z-10" />
+                    <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/50 to-transparent z-10" />
                   )}
                   
-                  <h3 className={`font-syne text-xs uppercase mb-2 ${styles.text} opacity-80`}>{card.label}</h3>
-                  <div className="font-space text-3xl font-bold text-pepe-white">
+                  <h3 className={`font-syne text-xs uppercase mb-2 text-[#1A1A1A] opacity-80 font-bold`}>{card.label}</h3>
+                  <div className="font-space text-3xl font-bold text-[#1A1A1A]">
                     {isInView ? (
                       card.isTxns ? (
                         <div className="flex gap-2">
-                          <span className="text-pepe-mint"><CountUp value={data?.buys24h || 0} /></span>
-                          <span className="text-pepe-white/30">/</span>
-                          <span className="text-pepe-coral"><CountUp value={data?.sells24h || 0} /></span>
+                          <span className="text-[#4ADE80]"><CountUp value={data?.buys24h || 0} /></span>
+                          <span className="text-[#1A1A1A]/30">/</span>
+                          <span className="text-[#E84040]"><CountUp value={data?.sells24h || 0} /></span>
                         </div>
                       ) : (
                         <CountUp value={card.value} prefix={card.prefix} />
@@ -82,12 +81,6 @@ export function LiveStats() {
             );
           })}
         </div>
-        
-        <ScrollReveal delay={0.4}>
-          <p className="mt-4 text-center font-inter text-xs text-pepe-white/40">
-            Numbers reflect a snapshot at time of last refresh. Tracked by Dexscreener.
-          </p>
-        </ScrollReveal>
       </div>
     </section>
   );
