@@ -1,6 +1,7 @@
 {
-  "buildCommand": "cd artifacts/pepebull && pnpm run build",
-  "outputDirectory": "artifacts/pepebull/dist/public",
+  "root": "artifacts/pepebull",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public",
   "framework": "vite",
   "env": {
     "PORT": "3000",
