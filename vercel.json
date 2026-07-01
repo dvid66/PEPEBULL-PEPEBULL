@@ -1,8 +1,9 @@
 {
   "root": "artifacts/pepebull",
-  "buildCommand": "pnpm run build",
+  "buildCommand": "cd ../../ && pnpm --filter pepebull build",
   "outputDirectory": "dist/public",
   "framework": "vite",
+  "installCommand": "cd ../../ && pnpm install",
   "env": {
     "PORT": "3000",
     "BASE_PATH": "/"
