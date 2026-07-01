@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@500;600;700&family=Outfit:wght@300;400;500&family=Bubblegum+Sans&family=Sora:wght@300;400;600&family=Bricolage+Grotesque:wght@400;500;600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-pepe-charcoal: #1F2937;
+  --color-pepe-deep: #111827;
+  --color-pepe-cyan: #22D3EE;
+  --color-pepe-mint: #A7F3D0;
+  --color-pepe-lavender: #C4B5FD;
+  --color-pepe-lime: #A3E635;
+  --color-pepe-coral: #FB7185;
+  --color-pepe-amber: #FBBF24;
+  --color-pepe-orchid: #D946EF;
+  --color-pepe-white: #F8FAFC;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-clash: 'Clash Display', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+  --font-instrument: 'Instrument Serif', serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-bubblegum: 'Bubblegum Sans', cursive;
+  --font-sora: 'Sora', sans-serif;
+  --font-bricolage: 'Bricolage Grotesque', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 215 28% 17%; /* #1F2937 */
+  --foreground: 210 40% 98%;
+  --border: 215 28% 25%;
+  --card: 215 28% 17%;
+  --card-foreground: 210 40% 98%;
+  --card-border: 215 28% 25%;
+  --sidebar: 215 28% 17%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-border: 215 28% 25%;
+  --sidebar-primary: 210 40% 98%;
+  --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+  --sidebar-accent: 215 28% 25%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-ring: 210 40% 98%;
+  --popover: 215 28% 17%;
+  --popover-foreground: 210 40% 98%;
+  --popover-border: 215 28% 25%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 215 28% 25%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 215 28% 25%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 215 28% 25%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --input: 215 28% 25%;
+  --ring: 215 20.2% 65.1%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased bg-pepe-charcoal text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-glow-cyan { text-shadow: 3px 4px 6px rgba(34, 211, 238, 0.6); }
+  .text-glow-mint { text-shadow: 3px 4px 6px rgba(167, 243, 208, 0.6); }
+  .text-glow-lavender { text-shadow: 3px 4px 6px rgba(196, 181, 253, 0.6); }
+  .text-glow-lime { text-shadow: 3px 4px 6px rgba(163, 230, 53, 0.6); }
+  .text-glow-coral { text-shadow: 3px 4px 6px rgba(251, 113, 133, 0.6); }
+  .text-glow-amber { text-shadow: 3px 4px 6px rgba(251, 191, 36, 0.6); }
+  .text-glow-orchid { text-shadow: 3px 4px 6px rgba(217, 70, 239, 0.6); }
+  .text-glow-white { text-shadow: 3px 4px 6px rgba(248, 250, 252, 0.6); }
+
+  .box-glow-cyan { box-shadow: 0 4px 20px -2px rgba(34, 211, 238, 0.4); }
+  .box-glow-mint { box-shadow: 0 4px 20px -2px rgba(167, 243, 208, 0.4); }
+  .box-glow-lavender { box-shadow: 0 4px 20px -2px rgba(196, 181, 253, 0.4); }
+  .box-glow-lime { box-shadow: 0 4px 20px -2px rgba(163, 230, 53, 0.4); }
+  .box-glow-coral { box-shadow: 0 4px 20px -2px rgba(251, 113, 133, 0.4); }
+  .box-glow-amber { box-shadow: 0 4px 20px -2px rgba(251, 191, 36, 0.4); }
+  .box-glow-orchid { box-shadow: 0 4px 20px -2px rgba(217, 70, 239, 0.4); }
+
+  .hover-intensify:hover { box-shadow: 0 8px 30px -2px var(--tw-shadow-color, rgba(255,255,255,0.4)); }
+  .active-scale:active { transform: scale(0.97); }
+
+  .section-bleed {
+    position: relative;
+  }
+  .section-bleed::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px -2px rgba(34, 211, 238, 0.6); }
+  50% { box-shadow: 0 4px 25px 2px rgba(34, 211, 238, 1); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
