@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export interface DexscreenerData {
-  priceUsd: string;
+  marketCap: number;
   volume24h: number;
   liquidityUsd: number;
   buys24h: number;
@@ -31,7 +31,7 @@ export function useDexscreener() {
 
       if (pair) {
         setData({
-          priceUsd: pair.priceUsd ?? '0',
+          marketCap: pair.marketCap ?? pair.fdv ?? 0,
           volume24h: pair.volume?.h24 ?? 0,
           liquidityUsd: pair.liquidity?.usd ?? 0,
           buys24h: pair.txns?.h24?.buys ?? 0,

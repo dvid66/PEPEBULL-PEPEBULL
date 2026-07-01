@@ -26,7 +26,7 @@ function RefreshIcon({ spinning }: { spinning: boolean }) {
 }
 
 const CARDS = [
-  { id: 'price', label: 'PRICE',        sub: 'USD',        color: '#22D3EE', shadow: '#22D3EE' },
+  { id: 'mcap',  label: 'MARKET CAP',   sub: 'fdv',        color: '#22D3EE', shadow: '#22D3EE' },
   { id: 'vol',   label: 'VOLUME',       sub: '24h',        color: '#A3E635', shadow: '#A3E635' },
   { id: 'liq',   label: 'LIQUIDITY',    sub: 'pool depth', color: '#FBBF24', shadow: '#FBBF24' },
   { id: 'buys',  label: 'BUYS',         sub: '24h',        color: '#4ADE80', shadow: '#4ADE80' },
@@ -69,7 +69,7 @@ export function LiveStats() {
   const getValue = (id: string) => {
     if (!data) return { display: '---', isMoney: false };
     switch (id) {
-      case 'price': return { display: data.priceUsd ? parseFloat(data.priceUsd) : 0, isMoney: true };
+      case 'mcap':  return { display: data.marketCap || 0, isMoney: true };
       case 'vol':   return { display: data.volume24h || 0, isMoney: true };
       case 'liq':   return { display: data.liquidityUsd || 0, isMoney: true };
       case 'buys':  return { display: data.buys24h || 0, isMoney: false };
