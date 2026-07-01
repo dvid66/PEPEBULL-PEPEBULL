@@ -10,6 +10,7 @@ import { Origin } from '@/components/Origin';
 import { Lore } from '@/components/Lore';
 import { Gallery } from '@/components/Gallery';
 import { LiveChart } from '@/components/LiveChart';
+import { MemeCreator } from '@/components/MemeCreator';
 import { SocialLinks } from '@/components/SocialLinks';
 import { HowToBuy } from '@/components/HowToBuy';
 import { Footer } from '@/components/Footer';
@@ -27,6 +28,7 @@ function Home() {
       <Lore />
       <Gallery />
       <LiveChart />
+      <MemeCreator />
       <SocialLinks />
       <HowToBuy />
       <Footer />

@@ -17,9 +17,6 @@ export function Origin() {
             <p>
               When the market blinked, the Green Bull held the line. It wasn't about complex tokenomics or empty promises. It was about raw, unfiltered momentum and the refusal to accept anything less than green candles.
             </p>
-            <p className="font-bold text-[#1A1A1A]">
-              We know we're a joke. We're still going to make you money anyway.
-            </p>
           </div>
         </ScrollReveal>
 
